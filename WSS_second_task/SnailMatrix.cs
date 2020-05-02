@@ -170,7 +170,17 @@ namespace WSS_first_task
                     }
                 }
                 else
+                {
+                    SnailMatrix[] sm = new SnailMatrix[3];
+                    for(int i = 0; i < sm.Length; i++){
+                        sm[i] = new SnailMatrix();
+                        sm[i].snailedArrayString = "test string for first load";
+                    }
+                    db.Snails.AddRange(sm);
+                    db.SaveChanges();
+
                     Console.WriteLine("Database is empty!");
+                }
                 Console.WriteLine();
                 return prevSnails;
             }
